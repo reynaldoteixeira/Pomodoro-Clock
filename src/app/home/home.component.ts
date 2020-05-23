@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   workMinutes = 25
   workSeconds = 0 
   interval 
+
   start(){
 
     this.interval = setInterval(()=>{
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
 
       this.workSeconds = this.workSeconds - 1
     },1000)
+  }
+
+  pause(){
+    clearInterval(this.interval)
   }
 
 }

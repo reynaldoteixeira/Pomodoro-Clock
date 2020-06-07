@@ -21,7 +21,12 @@ export class HomeComponent implements OnInit {
   restSeconds = 3
 
   interval 
-  format = false
+
+  workSecondsString = "0" + this.workSeconds.toString()
+  workMinutesString = "0" + this.workMinutes.toString()
+
+  restMinutesString = "0" + this.restMinutes.toString()
+  restSecondsString = "0" + this.restSeconds.toString()
 
   start(){
 
@@ -34,6 +39,8 @@ export class HomeComponent implements OnInit {
     
       this.workSeconds = this.workSeconds - 1
 
+      
+
       if(this.workMinutes == 0 && this.workSeconds == 0){
         this.workMinutes = 25
         this.workSeconds = 0
@@ -41,6 +48,19 @@ export class HomeComponent implements OnInit {
         this.rest()
       }
 
+      
+      this.workMinutesString =  this.workMinutes.toString()
+      this.workSecondsString = this.workSeconds.toString()
+      
+      if(this.workMinutes < 10){
+        this.workMinutesString = "0" + this.workMinutes.toString()
+        
+      }
+
+      if(this.workSeconds < 10){
+        this.workSecondsString = "0" + this.workSeconds.toString()
+      }
+      
     },1000)
   }
 
@@ -61,7 +81,18 @@ export class HomeComponent implements OnInit {
         this.pause()
         this.start()
       }
+
+      this.restMinutesString =  this.restMinutes.toString()
+      this.restSecondsString =  this.restSeconds.toString()
       
+      if(this.restMinutes < 10){
+        this.restMinutesString = "0" + this.restMinutes.toString()
+      }
+
+      if(this.restSeconds < 10){
+        this.restSecondsString = "0" + this.restSeconds.toString()
+      }
+
     },1000)
   }
 

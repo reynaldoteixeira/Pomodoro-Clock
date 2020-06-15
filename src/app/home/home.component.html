@@ -1,11 +1,29 @@
-<p>Pomodoro</p>
+<div class="container">
+        <div class="row d-flex justify-content-center mb-5">
+            <h1>Pomodoro</h1>
+        </div>  
 
-<br>
-    {{workMinutesString}}:{{workSecondsString}}
-<br>
-<br>
-    {{restMinutesString}}:{{restSecondsString}}
-<br>
-<br>
-<button (click)="start()">Start</button>
-<button (click)="pause()">Pause</button>
+        <div class="row ">  
+            <div class="col-md-12 d-flex justify-content-center">
+                <h3>Work Time</h3>
+            </div>
+
+            <div class="col-md-12 d-flex justify-content-center mb-4">
+                {{workMinutesString}}:{{workSecondsString}}
+            </div>  
+            
+            <div class="col-md-12 d-flex justify-content-center">
+                <h3>Rest Time</h3>
+            </div>
+
+            <div class="col-md-12 d-flex justify-content-center mb-4">
+                {{restMinutesString}}:{{restSecondsString}}
+            </div> 
+        </div>
+        
+        
+        <div class="row d-flex justify-content-center">     
+            <button type="button" class="btn btn-light mr-3" (click)="start()">Start</button>
+            <button type="button" class="btn btn-info" (click)="pause()">Pause</button>
+        </div>
+</div>

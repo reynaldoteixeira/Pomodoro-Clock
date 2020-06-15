@@ -10,20 +10,20 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+   
   
   }
 
-  workMinutes = 0
-  workSeconds = 3 
+  workMinutes = 25
+  workSeconds = 0 
 
-  restMinutes = 0
-  restSeconds = 3
+  restMinutes = 5
+  restSeconds = 0
 
   interval 
 
   workSecondsString = "0" + this.workSeconds.toString()
-  workMinutesString = "0" + this.workMinutes.toString()
+  workMinutesString = this.workMinutes.toString()
 
   restMinutesString = "0" + this.restMinutes.toString()
   restSecondsString = "0" + this.restSeconds.toString()
@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
         this.workSeconds = 0
         this.pause()
         this.rest()
+        alert("Work Time Out!")
       }
 
       
@@ -80,6 +81,7 @@ export class HomeComponent implements OnInit {
         this.restSeconds = 0
         this.pause()
         this.start()
+        alert("Rest Time Out!")
       }
 
       this.restMinutesString =  this.restMinutes.toString()
